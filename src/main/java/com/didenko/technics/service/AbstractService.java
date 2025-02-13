@@ -17,14 +17,6 @@ public abstract class AbstractService<E extends AbstractDevice, R extends Common
         this.repository = repository;
     }
 
-//    public List<E> findAll() {
-//        return repository.findAll();
-//    }
-//
-//    public E create(E device) {
-//        return repository.save(device);
-//    }
-
     @Override
     public Optional<E> save(E entity) {
         return Optional.of(repository.save(entity));
