@@ -111,14 +111,4 @@ public abstract class AbstractDevice implements Serializable {
         return Objects.hash(name, manufactCountry, company);
     }
 
-    @Override
-    public String toString() {
-        return "AbstractDevice{" +
-            "name='" + name + '\'' +
-            ", manufactCountry='" + manufactCountry + '\'' +
-            ", company='" + company + '\'' +
-            ", orderOnline=" + orderOnline +
-            ", paymentInstallments=" + paymentInstallments +
-            '}';
-    }
 }

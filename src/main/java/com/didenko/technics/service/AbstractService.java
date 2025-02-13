@@ -19,6 +19,12 @@ public abstract class AbstractService<E extends AbstractDevice, R extends Common
 
     @Override
     public Optional<E> save(E entity) {
+        List<E> devices = repository.findAll();
+        for (E device : devices) {
+            if (device.equals(entity)) {
+                throw new SampleException(ErrorType.ENTITY_ALREADY_EXISTS.getDescription());
+            }
+        }
         return Optional.of(repository.save(entity));
     }
 

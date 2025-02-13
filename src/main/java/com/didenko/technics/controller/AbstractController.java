@@ -8,11 +8,9 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "api/devices")
 public abstract class AbstractController<E extends AbstractDevice, S extends CommonService<E>> implements
     CommonController<E> {
 
@@ -21,17 +19,6 @@ public abstract class AbstractController<E extends AbstractDevice, S extends Com
     protected AbstractController(S service) {
         this.service = service;
     }
-
-//    @GetMapping
-//    public List<TV> findAll(){
-//       return deviceService.findAll();
-//    }
-//
-//    @PostMapping
-//    public TV create (@RequestBody TV device){
-//        return deviceService.create(device);
-//    }
-
 
     @Override
     public ResponseEntity<E> save(@RequestBody E entity) {
