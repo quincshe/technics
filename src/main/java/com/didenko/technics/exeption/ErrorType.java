@@ -6,7 +6,7 @@ public enum ErrorType {
     ENTITY_ALREADY_EXISTS("Entity already exists"),
     ENTITY_NOT_UPDATED("Entity not updated: %s");
 
-    private String description;
+    private final String description;
 
     ErrorType(String description) {
         this.description = description;

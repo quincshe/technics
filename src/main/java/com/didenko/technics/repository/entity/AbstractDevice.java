@@ -14,7 +14,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "devices")
 @DiscriminatorColumn(name = "device", discriminatorType = DiscriminatorType.STRING)
-public abstract class AbstractDevice implements Serializable {
+public class AbstractDevice implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
