@@ -4,7 +4,8 @@ import com.didenko.technics.repository.entity.AbstractDevice;
 import java.util.List;
 import java.util.Optional;
 
-public interface CommonService <E extends AbstractDevice> {
+public interface CommonService<E extends AbstractDevice> {
+
     Optional<E> save(E entity);
 
     List<E> saveAll(List<E> entities);

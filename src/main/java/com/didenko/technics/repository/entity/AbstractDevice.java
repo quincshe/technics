@@ -7,12 +7,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
 
-//@MappedSuperclass
 @Entity
 @Table(name = "devices")
 @DiscriminatorColumn(name = "device", discriminatorType = DiscriminatorType.STRING)
@@ -37,12 +35,6 @@ public abstract class AbstractDevice implements Serializable {
 
     @Column(name = "payment_installments")
     private boolean paymentInstallments;
-
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "device_id")
-
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "device")
-//    private List<Model> model_list_in_stock;
 
     public AbstractDevice() {
     }
@@ -103,23 +95,6 @@ public abstract class AbstractDevice implements Serializable {
     public void setPaymentInstallments(boolean paymentInstallments) {
         this.paymentInstallments = paymentInstallments;
     }
-
-//    public void addModelInStockList(Model model) {
-//        if (model_list_in_stock == null) {
-//            model_list_in_stock = new ArrayList<>();
-//        }
-//        model_list_in_stock.add(model);
-//        model.setDevice(this);
-//    }
-//
-//    public List<Model> getModel_list_in_stock() {
-//        return model_list_in_stock;
-//    }
-//
-//    public void setModel_list_in_stock(List<Model> model_list_in_stock) {
-//        this.model_list_in_stock = model_list_in_stock;
-//    }
-
 
     @Override
     public boolean equals(Object o) {
