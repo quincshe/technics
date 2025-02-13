@@ -17,16 +17,14 @@ public abstract class AbstractService<E extends AbstractDevice, R extends Common
         this.repository = repository;
     }
 
-//    public List<E> findAll() {
-//        return repository.findAll();
-//    }
-//
-//    public E create(E device) {
-//        return repository.save(device);
-//    }
-
     @Override
     public Optional<E> save(E entity) {
+        List<E> devices = repository.findAll();
+        for (E device : devices) {
+            if (device.equals(entity)) {
+                throw new SampleException(ErrorType.ENTITY_ALREADY_EXISTS.getDescription());
+            }
+        }
         return Optional.of(repository.save(entity));
     }
 

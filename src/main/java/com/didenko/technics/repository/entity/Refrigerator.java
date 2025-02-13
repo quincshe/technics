@@ -3,6 +3,6 @@ package com.didenko.technics.repository.entity;
 import jakarta.persistence.Entity;
 
 @Entity
-public class TV extends AbstractDevice {
+public class Refrigerator extends AbstractDevice {
 
 }

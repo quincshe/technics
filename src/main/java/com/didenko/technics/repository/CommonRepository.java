@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 @NoRepositoryBean
-public interface CommonRepository <E extends AbstractDevice> extends JpaRepository<E, Integer> {
+public interface CommonRepository<E extends AbstractDevice> extends JpaRepository<E, Integer> {
 
 }
